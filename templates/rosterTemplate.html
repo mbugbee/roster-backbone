@@ -1,0 +1,26 @@
+<a href="#/add" class="btn btn-success">Add Player</a>
+  <hr />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Position</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each( roster, function ( player ) { %>
+          <tr>
+            <td><%= player.get('name') %></td>
+            <td><%= player.get('number') %></td>
+            <td><%= player.get('position') %></td>
+            <td><%= player.get('goals') %></td>
+            <td><%= player.get('assists') %></td>
+            <td><a class="btn" href="#/edit/<%= player.get('_id') %>">Edit</a></td>
+          </tr>
+      <% }); %>
+    </tbody>
+  </table>

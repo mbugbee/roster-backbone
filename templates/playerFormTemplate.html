@@ -1,0 +1,28 @@
+<form class="player-form">
+  <legend><%= player ? 'Edit' : 'New' %> Player</legend>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= player ? player.get('name') : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Number</label>
+    <input type="text" name="number" value="<%= player ? player.get('number') : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Position</label>
+    <input type="text" name="position" value="<%= player ? player.get('position') : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Goals</label>
+    <input type="text" name="goals" value="<%= player ? player.get('goals') : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Assists</label>
+    <input type="text" name="assists" value="<%= player ? player.get('assists') : '' %>">
+  </div>
+  <button type="submit" class="btn btn-success">Save Player</button>
+  <% if(player) { %>
+    <input type="hidden" name="id" value="<%= player.id %>"/> 
+    <button type="button" class="btn btn-danger delete">Delete</button>
+ <% }; %>
+</form>
